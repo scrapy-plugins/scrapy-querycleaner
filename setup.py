@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='scrapy-querycleaner',
-    version='0.1.0',
+    version='1.0.0',
     license='BSD',
     description='Scrapy spider middleware to clean up query parameters in request URLs',
     author='Scrapinghub',
