@@ -2,7 +2,7 @@ Changes
 =======
 
 
-x.x.x (yyyy-mm-dd)
+1.0.0 (2016-06-30)
 ------------------
 
 Initial release.
