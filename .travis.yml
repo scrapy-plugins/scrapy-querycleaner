@@ -13,4 +13,15 @@ install: pip install -U tox codecov
 script: tox
 
 after_success:
-  - codecov
+- codecov
+
+deploy:
+  provider: pypi
+  distributions: "sdist bdist_wheel"
+  user: redapple
+  password:
+    secure: JEmV06ANzt1vm60gA/XqF5hzq+pEC6JJjqS3pXkK18IZVW6nGsFEcDoY3KUGX0fp06qFRhYrMZsT/A1Y/2bPxbaFJiAoiH/Tw3PQCbrO93A5GqTwya9gLVXF3DxYw79xbEOxE6CzmGb+3JOMvM0MI0BQM81HmBJhUM6yR66bDFiD0JTXqGFsOt5lISUTvPvlLCUzZF1O/J8K5cQ2brjOPLqiH+uXZi6e1aTEjKGsv+uH+hn6XA4y8ebIpFgbQhcqKOZloQHF7F8PJNsuzG+tDfmuAz87PxnmllH4vDrViUEi9gss+Uj6dO1czacf6rxamnfWZX8gZeMPR1dM5+XxxTSWfP3xTgVMzLUOrA4l9gwc1483VlQ83NelktgNUOkYyfqu6bG+6ze33nIILHiso5isDcD8o/p5tqph9EywjQmoCugfz1zY+Ky0i61YkOH+R/C29K+vuD4OVwPw1S+KPb3oRXiSm9oW/A90Wd10l33wOIueNjkfmXoIn2q/XE8ef2z9I9sqTPi15/B40RiIdpvuaLFjKhPpUyM2m5WKuV9XX9BkILPv0do8dHUfWChFEX8qph/9Ph8+QLt2z9fAx2uOVplkfpTJgfY/JDuqMjU/i/bE25M3YcN07d9jTf5NRplVqywS/iJHQFmRA21UI1gZP/a5+WplCHGzxxhYrW8=
+  on:
+    tags: true
+    repo: scrapy-plugins/scrapy-querycleaner
+    condition: $TOXENV = py35
